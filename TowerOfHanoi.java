@@ -16,13 +16,20 @@ public class TowerOfHanoi {
         
         int[] source = new int[n]; //populate the array in the for-loop
         
-        for(int i = n; i >= n; i--){
-            for(int j = 0; j <= n; j++){
-                source[j] = i;   
+        for(int i = n; i >= 0; i--){
+            
+            int arrayIndex = (n - i);            
+            if (arrayIndex == n){
+                return;
             }
+            else{
+                source[arrayIndex] = i;
+            }
+           
         }
         
-        T(source, 5);
+        
+        T(source, t);
         int[] target;
         int[] helper;
         
@@ -31,5 +38,6 @@ public class TowerOfHanoi {
     public static void T(int n[], int r) {
         System.out.println(n);
     }
+
     
 }
